@@ -1,13 +1,12 @@
-FROM debian:11
+FROM almalinux:minimal
 
-RUN apt-get update && apt-get dist-upgrade -y && apt-get install dnsmasq -y
+RUN microdnf upgrade --refresh -y && microdnf install dnsmasq -y
 
 COPY dnsmasq.conf /etc/
-COPY resolv.dnsmasq.conf /etc/
 
 VOLUME /dnsmasq.hosts
 
-EXPOSE 5353
+EXPOSE 53
 
 ENTRYPOINT ["/usr/sbin/dnsmasq", "-d"]
 
