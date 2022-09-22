@@ -1,3 +1,5 @@
+#!/bin/bash
+
 REGISTRY="sgtcoder"
 PROJECT_NAME="dnsmasq"
 
