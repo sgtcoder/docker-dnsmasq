@@ -1,4 +1,4 @@
-FROM almalinux:minimal
+FROM almalinux:8-minimal
 
 RUN microdnf upgrade --refresh -y && microdnf install dnsmasq -y
 
